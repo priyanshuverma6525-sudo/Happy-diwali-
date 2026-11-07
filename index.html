@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>दीपावली की शुभकामनाएँ 🪔</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;color:#fff8e7;font-family:system-ui,Arial,sans-serif;background:radial-gradient(ellipse at top,#55204d 0,#24113b 45%,#090b20 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff7c8 1px,transparent 1.8px),radial-gradient(#ffc45c 1px,transparent 2px);background-size:90px 100px,150px 170px;background-position:10px 20px,45px 70px;opacity:.55}
+main{min-height:100vh;display:grid;place-items:center;padding:22px;position:relative}
+.card{width:min(720px,100%);text-align:center;padding:clamp(22px,5vw,48px);border:1px solid #ffcf765c;border-radius:30px;background:linear-gradient(145deg,#ffffff12,#ffffff04);box-shadow:0 0 70px #ff8a301a;backdrop-filter:blur(6px)}
+.top{color:#ffd875;letter-spacing:.22em;font-size:12px;font-weight:700;text-transform:uppercase}
+h1{font-family:Georgia,serif;font-size:clamp(42px,9vw,78px);line-height:1.08;margin:14px 0;color:#ffe7a2;text-shadow:0 0 25px #ffb83d66}
+.sub{max-width:510px;margin:0 auto 18px;color:#f9e8ff;line-height:1.7}
+.mandala{font-size:24px;color:#ffb6d9;letter-spacing:8px;margin:12px}
+.lamp{font-size:100px;display:block;filter:drop-shadow(0 0 22px #ff9e29);animation:glow 1.8s ease-in-out infinite alternate}
+@keyframes glow{to{filter:drop-shadow(0 0 35px #ffcc54);transform:scale(1.04)}}
+button{cursor:pointer;border:0;border-radius:100px;padding:14px 25px;font-weight:800;color:#3b1740;background:linear-gradient(100deg,#ffe17d,#ff9bc8);box-shadow:0 7px 28px #ffbd5c2b}
+button:hover{transform:translateY(-2px)}
+.hidden{display:none}.reveal{margin:24px auto 0;padding:22px;border:1px solid #ffd98a55;border-radius:20px;background:#ffffff0c;animation:appear .7s ease;max-width:540px}
+.reveal h2{color:#ffe08a;font-family:Georgia,serif;font-size:clamp(26px,5vw,38px);margin:0 0 10px}
+.reveal p{line-height:1.8;margin:8px 0;color:#fff1f8}
+.footer{margin-top:25px;color:#cbb7db;font-size:12px}
+.spark{position:fixed;width:4px;height:4px;border-radius:50%;background:#fff2a8;box-shadow:0 0 12px 5px #ffb64b;pointer-events:none;animation:up 3.5s linear forwards}
+@keyframes up{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(-100vh) scale(.2);opacity:0}}
+.burst{position:fixed;left:var(--x);top:var(--y);font-size:20px;animation:burst 1.5s ease-out forwards;pointer-events:none}
+@keyframes burst{0%{opacity:1;transform:scale(.3)}100%{opacity:0;transform:scale(2.4) translateY(-20px)}}
+@media(max-width:480px){.lamp{font-size:82px}.card{padding:28px 18px}}
+</style>
+</head>
+<body>
+<main><section class="card">
+<div class="top">✨ LIGHTS • JOY • LOVE ✨</div>
+<h1>Happy Diwali</h1>
+<p class="sub">May your life always shine with happiness, love, and success.</p>
+<div class="mandala">✦ ❀ ✦ ❀ ✦</div>
+<span class="lamp">🪔</span>
+<div class="mandala">🌸 PEACE • PROSPERITY 🌸</div>
+<button id="open">🎁 Open Your Diwali Surprise</button>
+<section class="reveal hidden" id="wish">
+<h2>Wishing You a Magical Diwali 💛</h2>
+<p>May this Diwali brighten every dark moment, bring your dreams closer, and fill your home with laughter, love, and prosperity.</p>
+<p>✨ Keep shining and stay happy! ✨</p>
+<div style="font-size:28px;margin-top:10px">🪔 🎆 🪔</div>
+</section>
+<div class="footer">A little Diwali wish, made with love ❤️</div>
+</section></main>
+<script>
+const open=document.getElementById('open'),wish=document.getElementById('wish');
+function sparkle(){let s=document.createElement('span');s.className='spark';s.style.left=Math.random()*100+'%';s.style.bottom='-5px';s.style.animationDuration=(2.8+Math.random()*2)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),5200)}
+function burst(){for(let i=0;i<12;i++){let b=document.createElement('span');b.className='burst';b.textContent=['✨','🎆','💫','🌟'][i%4];b.style.setProperty('--x',(10+Math.random()*80)+'%');b.style.setProperty('--y',(10+Math.random()*65)+'%');document.body.appendChild(b);setTimeout(()=>b.remove(),1600)}}
+open.addEventListener('click',()=>{wish.classList.remove('hidden');open.textContent='💖 Surprise Unlocked!';burst();for(let i=0;i<35;i++)setTimeout(sparkle,i*70)});
+</script>
+</body>
+</html>
